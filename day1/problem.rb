@@ -10,11 +10,13 @@ end
 
 numbers = File.readlines('input.txt').map!(&:to_i)
 
+# O(nlogn) sort
 puts Benchmark.measure {
 	puts "Sorting!"
 	numbers.sort!()
 }
 
+# O(n) search
 puts Benchmark.measure {
 	low = 0
 	hi = numbers.count - 1
@@ -28,6 +30,7 @@ puts Benchmark.measure {
 	puts "Task 1: #{numbers[low] * numbers[hi]}"
 }
 
+# O(n^2) search
 puts Benchmark.measure {
 	low = 0
 	hi = numbers.count - 1
