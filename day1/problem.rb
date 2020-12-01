@@ -11,8 +11,11 @@ end
 numbers = File.readlines('input.txt').map!(&:to_i)
 
 puts Benchmark.measure {
+	puts "Sorting!"
 	numbers.sort!()
+}
 
+puts Benchmark.measure {
 	low = 0
 	hi = numbers.count - 1
 	current_value = getValue(low, hi, numbers)
@@ -23,7 +26,9 @@ puts Benchmark.measure {
 	end
 
 	puts "Task 1: #{numbers[low] * numbers[hi]}"
+}
 
+puts Benchmark.measure {
 	low = 0
 	hi = numbers.count - 1
 
